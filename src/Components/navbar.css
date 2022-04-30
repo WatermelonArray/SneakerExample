@@ -1,0 +1,19 @@
+.Navbar {
+	position: sticky;
+	width: 100%;
+	background-color: aquamarine;
+	padding-left: 20px;
+	margin-left:80px;
+}
+
+.navbarLogo {
+	position: relative;
+	padding-right: 10px;
+}
+
+.links {
+	position: relative;
+	float: left;
+
+	color:blue
+}
