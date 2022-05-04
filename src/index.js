@@ -1,11 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Navbar from "./Components/navbar"
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Navbar />
-  </React.StrictMode>
-);
+import Navbar from "./components/navbar"
+import Home from "./pages/home";
+import Collections from "./pages/collections";
+
+export default function App() {
+	return (
+		<>
+			<BrowserRouter>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Navbar />}>
+						<Route index element={<Home />} />
+						<Route path="collections" element={<Collections />} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
+		</>
+	);
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);

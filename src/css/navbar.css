@@ -1,0 +1,99 @@
+ul {
+	color: hsl(219, 9%, 45%);
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 16px;
+	text-decoration: none;
+	list-style-type: none;
+	padding: 0%;
+	margin: 0%;
+}
+
+.navbar {
+	position: sticky;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: row;
+	width: 80vw;
+	height: 100px;
+	padding-left: 10vw;
+	padding-right: 10vw;
+}
+.pageLinks {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	align-items: center;
+}
+.rightContent {
+	width:100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: row;
+}
+.navbarLogo {
+	position: relative;
+	padding-right: 1.5rem;
+}
+
+
+.topbarLinks {
+	padding-right: 1.5rem;
+	color: hsl(219, 9%, 45%);
+	text-decoration: none;
+	cursor: pointer;
+}
+.topbarLinks:hover {
+	color: hsl(0, 0%, 0%);
+	text-decoration: none;
+}
+
+.topbarRight {
+	padding: 0%;
+	margin: 0%;
+	padding-left: 3rem;
+	text-decoration: none;
+}
+.topbarRight:hover {
+	color: hsl(0, 0%, 0%);
+	text-decoration: none;
+}
+
+.imageProfile {
+	position: relative;
+	height: 42px;
+	width: 42px;
+}
+
+.hamburger {
+	position: relative;
+	border: 0;
+	height: 40px;
+	width: 40px;
+	padding: 0.5rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	position: absolute;
+	top: 25%;
+	left: 25px;
+	transform: translateY(-50%);
+	display: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.navbarLine {
+	background-color: hsl(220, 14%, 75%);
+	width: 80vw;
+	margin-left: 10vw;
+	height:1pt;
+}
+
+@media screen and (max-width: 768px) {
+	.hamburger {
+		display: block;
+	}
+	.navbarDiv {
+		height: 4rem;
+	}
+}

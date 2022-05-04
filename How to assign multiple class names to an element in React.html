@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark" lang="en-US"><head><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body, input, textarea, select, button {
+    background-color: #181a1b;
+}
+html, body, input, textarea, select, button {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #404400 !important;
+    color: #e8e6e3 !important;
+}
+::-webkit-scrollbar {
+    background-color: #202324;
+    color: #aba499;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #454a4d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #575e62;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #484e51;
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+* {
+    scrollbar-color: #454a4d #202324;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+  <title>How to assign multiple class names to an element in React</title>
+
+      <meta charset="utf-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <meta name="description" content="The complete guide on how to assign multiple class names to an element in React with examples and explanation">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@nikita_hlopov">
+    <meta name="twitter:title" content="How to assign multiple class names to an element in React">
+    <meta name="twitter:description" content="The complete guide on how to assign multiple class names to an element in React with examples and explanation">
+    
+    <meta property="twitter:image:src" content="https://nikitahl.com/images/social-card.png">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="https://nikitahl.com/how-to-assign-multiple-classes-in-react/">
+    <meta property="og:title" content="How to assign multiple class names to an element in React">
+    
+    <meta property="og:image" content="https://nikitahl.com/images/social-card.png">
+    
+    <meta property="og:description" content="The complete guide on how to assign multiple class names to an element in React with examples and explanation">
+    <meta property="og:site_name" content="Nikita Hlopov">
+
+    
+
+    
+    <meta property="og:title" content="How to assign multiple class names to an element in React">
+    
+  
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="How%20to%20assign%20multiple%20class%20names%20to%20an%20element%20in%20React_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link rel="alternate" type="application/rss+xml" title="Nikita Hlopov - Frontend Dev Blog" href="https://nikitahl.com/feed.xml">
+  <link id="favicon" rel="icon" type="image/x-icon" href="How%20to%20assign%20multiple%20class%20names%20to%20an%20element%20in%20React_files/favicon.png">
+
+  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+<meta name="darkreader" content="21a03cf6568f4e6fb298f47b09718710"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1 {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}
+embed[type="application/pdf"] { filter: invert(100%) contrast(90%); }</style></head>
+  <body class="theme-light">
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+        <a href="https://nikitahl.com/" class="site-avatar"><img src="How%20to%20assign%20multiple%20class%20names%20to%20an%20element%20in%20React_files/favicon.png" alt="Site Logo"></a>
+      
+
+      <div class="site-info">
+        <h1 class="site-name"><a href="https://nikitahl.com/">Nikita Hlopov</a></h1>
+        <p class="site-description">Frontend Dev Blog</p>
+      </div>
+
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+
+      <div class="nav-controls">
+        <nav>
+          
+            
+            
+              <a href="https://nikitahl.com/" class="active">Blog</a>
+            
+          
+            
+            
+              <a href="https://nikitahl.com/about">About</a>
+            
+          
+            
+            
+              <a href="https://nikitahl.com/archive">Archive</a>
+            
+          
+            
+            
+              <a href="https://nikitahl.com/tags">Tags</a>
+            
+          
+        </nav>
+        <span class="theme-switch" id="theme-toggle" title="Toggle theme"></span>
+      </div>
+    </header>
+  </div>
+</div>
+
+    <main id="main" role="main" class="container">
+      <article class="post">
+  <h1>How to assign multiple class names to an element in React</h1>
+
+  <div class="meta">
+    <b class="date">Published: </b>
+    <time class="date" datetime="2018-11-14T00:00:00+00:00">
+      14 Nov 2018
+    </time> · 
+    
+    <span class="reading-time"><b>Reading time:</b> 
+
+9 min
+</span>
+  </div>
+
+  <div class="entry">
+    <p>There are a few ways how to assign multiple classes to an element
+ in React. It can be achieved via an external package or via Vanilla 
+JavaScript.</p>
+
+<p>Depending on your project and requirements you can choose whichever method suits your needs best.</p>
+
+<ol>
+  <li><a href="#1-classnames-package">using <code class="language-plaintext highlighter-rouge">classNames</code> package</a></li>
+  <li><a href="#2-vanilla-javascript">using Vanilla JavaScript</a></li>
+</ol>
+
+<p>Let’s say we have the following button component.</p>
+
+<p><strong>React Class:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">'btn'</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>React Hooks:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">Button</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="s">'btn'</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="1-classnames-package">1. <code class="language-plaintext highlighter-rouge">classNames</code> package</h2>
+
+<p>It’s pretty simple:</p>
+<ul>
+  <li><a href="https://github.com/JedWatson/classnames#classnames" target="blank">install <code class="language-plaintext highlighter-rouge">classNames</code></a> package if you haven’t already.</li>
+  <li>Import it to your component
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">classNames</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">classnames</span><span class="dl">'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Use it like so:
+<strong>React Class:</strong>
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">classNames</span><span class="p">(</span><span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">btn-primary</span><span class="dl">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p><strong>React Hooks:</strong></p>
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">Button</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">classNames</span><span class="p">(</span><span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">btn-primary</span><span class="dl">'</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">classNames</code> package allows other cool stuff like conditional classes and dynamic class names.</p>
+
+<h3 id="conditional-classes">Conditional classes</h3>
+
+<p><strong>React Class:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">classNames</span><span class="p">({</span>
+      <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">btn-pressed</span><span class="dl">'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isPressed</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">btn-over</span><span class="dl">'</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isPressed</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isHovered</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>React Hooks:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">Button</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isPressed</span><span class="p">,</span> <span class="nx">setPressed</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isHovered</span><span class="p">,</span> <span class="nx">setHovered</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">classNames</span><span class="p">({</span>
+    <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">btn-pressed</span><span class="dl">'</span><span class="p">:</span> <span class="nx">isPressed</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">btn-over</span><span class="dl">'</span><span class="p">:</span> <span class="o">!</span><span class="nx">isPressed</span> <span class="o">&amp;&amp;</span> <span class="nx">isHovered</span>
+  <span class="p">})</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="dynamic-class-name">Dynamic class name</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">buttonType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">primary</span><span class="dl">'</span>
+<span class="nx">classNames</span><span class="p">({</span> <span class="p">[</span><span class="s2">`btn-</span><span class="p">${</span><span class="nx">buttonType</span><span class="p">}</span><span class="s2">`</span><span class="p">]:</span> <span class="kc">true</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="2-vanilla-javascript">2. Vanilla JavaScript</h2>
+
+<p>You can assign multiple class names to an element by using plain old JavaScript. And even imitate some of the <code class="language-plaintext highlighter-rouge">classNames</code> package functionality.</p>
+
+<h3 id="multiple-class-names-as-a-string">Multiple class names as a string</h3>
+
+<p><strong>React Class:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isPressed</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">btnClass</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1"> btn-pressed</span><span class="dl">'</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>React Hooks:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">Button</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isPressed</span><span class="p">,</span> <span class="nx">setPressed</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+
+  <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isPressed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">btnClass</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1"> btn-pressed</span><span class="dl">'</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="multiple-class-names-as-an-array">Multiple class names as an array</h3>
+
+<p><strong>React Class:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">btn-primary</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">btn-info</span><span class="dl">'</span>
+    <span class="p">]</span>
+    <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">btnClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>React Hooks:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">Button</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">btn-primary</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">btn-info</span><span class="dl">'</span>
+  <span class="p">]</span>
+  <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">btnClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="multiple-class-names-as-an-array-with-condition">Multiple class names as an array with condition</h3>
+
+<p><strong>React Class:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isPressed</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">btn-pressed</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+      <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isPressed</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isHovered</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">btn-over</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span>
+    <span class="p">]</span>
+    <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">btnClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>React Hooks:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">Button</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isPressed</span><span class="p">,</span> <span class="nx">setPressed</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isHovered</span><span class="p">,</span> <span class="nx">setHovered</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nx">isPressed</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">btn-pressed</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+    <span class="o">!</span><span class="nx">isPressed</span> <span class="o">&amp;&amp;</span> <span class="nx">isHovered</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">btn-over</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span>
+  <span class="p">]</span>
+  <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">btnClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="dynamic-class-with-multiple-classes-as-an-array-react-class">Dynamic class with multiple classes as an array <strong>React Class:</strong></h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">buttonType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">primary</span><span class="dl">'</span>
+    <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span>
+      <span class="s2">`btn-</span><span class="p">${</span><span class="nx">buttonType</span><span class="p">}</span><span class="s2">`</span>
+    <span class="p">]</span>
+
+    <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">btnClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>React Hooks:</strong></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nx">Button</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">buttonType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">primary</span><span class="dl">'</span>
+  <span class="kd">let</span> <span class="nx">btnClass</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">,</span>
+    <span class="s2">`btn-</span><span class="p">${</span><span class="nx">buttonType</span><span class="p">}</span><span class="s2">`</span>
+  <span class="p">]</span>
+
+  <span class="nx">btnClass</span> <span class="o">=</span> <span class="nx">btnClass</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">btnClass</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>If you have a complex system you can do lots of cool stuff with that.
+ You can define the classes array outisde of the render function and 
+manipulate it as you want.</p>
+
+<p>So you might not need <code class="language-plaintext highlighter-rouge">classNames</code> package in the first place unless it’s been already used in your project.</p>
+
+
+  </div>
+  <section id="share-bar">
+  <b style="display:inline-block;margin: 0 0 15px;">Like this article? Share it on:</b>
+  <div class="share-buttons">
+      <a class="share-button facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://nikitahl.com/how-to-assign-multiple-classes-in-react/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+          <svg viewBox="0 0 512 512">
+  <path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path>
+</svg> facebook
+      </a>
+
+      <a class="share-button twitter" href="https://twitter.com/intent/tweet?text=How%20to%20assign%20multiple%20class%20names%20to%20an%20element%20in%20React&amp;url=https://nikitahl.com/how-to-assign-multiple-classes-in-react/&amp;via=nikitahl" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter">
+          <svg viewBox="0 0 512 512">
+  <path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"></path>
+</svg> twitter
+      </a>
+
+      <a class="share-button reddit" href="http://www.reddit.com/submit?url=https://nikitahl.com/how-to-assign-multiple-classes-in-react/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit">
+          <svg viewBox="0 0 24 24">
+  <path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"></path>
+</svg> reddit
+      </a>
+
+      <a class="share-button linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://nikitahl.com/how-to-assign-multiple-classes-in-react/&amp;title=How%20to%20assign%20multiple%20class%20names%20to%20an%20element%20in%20React&amp;summary=The%20complete%20guide%20on%20how%20to%20assign%20multiple%20class%20names%20to%20an%20element%20in%20React%20with%20examples%20and%20explanation&amp;source=" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+          <svg viewBox="0 0 512 512">
+  <path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"></path>
+</svg> linkedin
+      </a>
+
+      <a class="share-button email" href="mailto:?subject=How to assign multiple class names to an element in React&amp;body=Hi, check out this article How to assign multiple class names to an element in React on https://nikitahl.com/how-to-assign-multiple-classes-in-react/" title="Share via Email">
+          <svg viewBox="0 0 512 512">
+  <path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"></path>
+</svg> email
+      </a>
+  </div>
+</section>
+  <div class="tags-container">
+    <b class="tags-label">Tags: </b>
+    <ul class="tag">
+      
+      <li>
+        <a href="https://nikitahl.com/tags#react">
+          react
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://nikitahl.com/tags#javascript">
+          javascript
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+  <hr>
+
+  <div class="pagination">
+    
+    
+      <span class="next">
+          <a href="https://nikitahl.com/practical-tips-for-beginner-web-developers/">
+            Next ⟩
+            <br>
+            <b>9 Practical tips for beginner web developers</b>
+          </a>
+      </span>
+    
+  </div>
+
+  
+</article>
+    </main>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<ul class="footer-icons">
+  <li>
+    <a href="https://www.twitter.com/nikita_hlopov" class="icon-26 twitter" title="Twitter" aria-label="Twitter">
+      <svg viewBox="0 0 512 512">
+  <path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"></path>
+</svg>
+    </a>
+  </li>
+	<li>
+		<a href="https://nikitahl.com/feed.xml" class="icon-21 rss" title="RSS" aria-label="RSS">
+			<svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"></path></svg>
+		</a>
+	</li>
+
+</ul>
+<p style="text-align: center;">
+	This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0 License</a>.
+	<br>The code in this work is licensed under an <a href="https://opensource.org/licenses/MIT" target="_blank" rel="license noopener">MIT License</a>.
+</p>
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+      (function (w, d) {
+        var themeToggle = document.getElementById("theme-toggle");
+        var m = d.querySelector("#main");
+        var i = m.querySelectorAll("img,iframe,video");
+
+        function toggleTheme(e) {
+          var theme = window.localStorage.theme;
+          if (window.localStorage.theme && e) {
+            document.body.classList.remove("theme-" + theme);
+            window.localStorage.theme = theme === "light" ? "dark" : "light";
+          } else if (!window.localStorage.theme) {
+            window.localStorage.theme = "light";
+          }
+          document.body.classList.add("theme-" + window.localStorage.theme);
+        }
+        themeToggle.addEventListener("click", toggleTheme);
+        toggleTheme();
+
+        if (i.length) {
+          var b = d.body;
+          var s = d.createElement("script"); s.async = true;
+          s.src = "https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js";
+          b.appendChild(s);
+
+          function initLozad () {
+            if (window.lozad) {
+              var observer = lozad();
+              observer.observe();
+            } else {
+              setTimeout(function () {
+                initLozad();
+              }, 90);
+            }
+          }
+          initLozad();
+        }
+      })(window, document);
+    </script>
+  
+
+</body></html>
