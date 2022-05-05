@@ -1,3 +1,12 @@
+/* Set page margins */
+body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	top: 0px;
+}
+
+/* Set base tags */
 ul {
 	color: hsl(219, 9%, 45%);
 	font-family: 'Kumbh Sans', sans-serif;
@@ -8,8 +17,12 @@ ul {
 	margin: 0%;
 }
 
+/* Main layout */
 .navbar {
-	position: sticky;
+	position: fixed;
+	top:0;
+	margin:0;
+	padding:0;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -18,6 +31,7 @@ ul {
 	height: 100px;
 	padding-left: 10vw;
 	padding-right: 10vw;
+	background-color: white;
 }
 .pageLinks {
 	display: flex;
@@ -32,21 +46,21 @@ ul {
 	align-items: center;
 	flex-direction: row;
 }
+
+/* Set page margins */
 .navbarLogo {
 	position: relative;
 	padding-right: 1.5rem;
 }
-
-
 .topbarLinks {
 	padding-right: 1.5rem;
 	color: hsl(219, 9%, 45%);
 	text-decoration: none;
 	cursor: pointer;
+	transition: 0.3s;
 }
 .topbarLinks:hover {
 	color: hsl(0, 0%, 0%);
-	text-decoration: none;
 }
 
 .topbarRight {
@@ -83,9 +97,11 @@ ul {
 }
 
 .navbarLine {
+	position: fixed;
 	background-color: hsl(220, 14%, 75%);
 	width: 80vw;
 	margin-left: 10vw;
+	top: 100px;
 	height:1pt;
 }
 
@@ -96,4 +112,10 @@ ul {
 	.navbarDiv {
 		height: 4rem;
 	}
+}
+
+.navbarOffset {
+	position: relative;
+	width: 100%;
+	height: 100px;
 }

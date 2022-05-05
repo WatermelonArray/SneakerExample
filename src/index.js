@@ -1,9 +1,23 @@
+// Import libraries
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// Import components
 import Navbar from "./components/navbar"
+
+// Import pages
 import Home from "./pages/home";
 import Collections from "./pages/collections";
+
+function Test() {
+	return (
+		<>
+			<div style="height: 100px;">
+
+			</div>
+		</>
+	)
+}
 
 export default function App() {
 	return (
@@ -11,10 +25,8 @@ export default function App() {
 			<BrowserRouter>
 				<Navbar />
 				<Routes>
-					<Route path="/" element={<Navbar />}>
-						<Route index element={<Home />} />
-						<Route path="collections" element={<Collections />} />
-					</Route>
+					<Route path="/" element={<Home />} />
+					<Route path="collections" element={<Collections />} />
 				</Routes>
 			</BrowserRouter>
 		</>

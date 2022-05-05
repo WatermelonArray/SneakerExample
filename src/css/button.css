@@ -1,0 +1,27 @@
+
+.button {
+	display: flex;
+	background-color: hsl(26, 100%, 55%);
+	box-shadow: 0 2rem 2rem 0 hsl(25, 100%, 94%), 0 0rem 2rem 0 hsl(25, 100%, 94%);
+	border-radius: 1rem;
+	border: none;
+
+	color: white;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 16px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+
+	margin: 1rem;
+	width: 16rem;
+	height: 4rem;
+	cursor: pointer;
+
+	transition: 0.3s;
+}
+
+.button:hover {
+	background-color: hsl(26, 100%, 67%);
+}

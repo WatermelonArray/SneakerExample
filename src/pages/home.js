@@ -1,9 +1,18 @@
 import React from "react";
 
+import Button from "../components/button";
+
+import svgLogo from "../static/svgs/logo.svg";
+
+import "../css/home.css";
+
 function home() {
 	return (
 		<>
-			<h3>HelloWorld!</h3>
+			<div className="home">
+				<img className="logoBig" src={svgLogo} alt="sneakers"></img>
+				<Button type="link" to="/collections" text="View Collections" />
+			</div>
 		</>
 	)
 }
