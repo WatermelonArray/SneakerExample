@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
+
+import Button from "../components/button";
 
 function collections() {
 	return (
-		<h3>Hello collections world!</h3>
+		<Button type="link" to="/itemView" text="Hello world" />
 	);
 }
 

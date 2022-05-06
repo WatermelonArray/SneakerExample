@@ -7,7 +7,7 @@ import svgCart from "../static/svgs/cart.svg";
 //import svgBurger from "../static/svgs/burger.svg";
 import svgProfile from "../static/images/image-avatar.png";
 
-import "../css/navbar.css"
+import "../static/css/navbar.css"
 
 
 function Navbar() {

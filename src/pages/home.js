@@ -4,7 +4,7 @@ import Button from "../components/button";
 
 import svgLogo from "../static/svgs/logo.svg";
 
-import "../css/home.css";
+import "../static/css/home.css";
 
 function home() {
 	return (

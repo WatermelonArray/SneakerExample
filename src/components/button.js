@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../css/button.css";
+import "../static/css/button.css";
 
 function Button(props) {
 	if (props.type === "button") { 

@@ -8,16 +8,7 @@ import Navbar from "./components/navbar"
 // Import pages
 import Home from "./pages/home";
 import Collections from "./pages/collections";
-
-function Test() {
-	return (
-		<>
-			<div style="height: 100px;">
-
-			</div>
-		</>
-	)
-}
+import ItemView from "./pages/itemView"
 
 export default function App() {
 	return (
@@ -27,6 +18,7 @@ export default function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="collections" element={<Collections />} />
+					<Route path="itemView" element={<ItemView />} />
 				</Routes>
 			</BrowserRouter>
 		</>
