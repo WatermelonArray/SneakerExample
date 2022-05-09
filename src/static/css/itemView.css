@@ -3,20 +3,21 @@
 	float: left;
 
 	width: 40vw;
-	height: 60vh;
+	height: 80vh;
 	margin:0;
 	padding:0;
 	margin-left: 10vw;
 	background-color: aliceblue;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 }
 .gridLayoutRight {
 	display: flex;
 	float: right;
 
 	width: 40vw;
-	height: 60vh;
+	height: 80vh;
 	margin:0;
 	padding:0;
 	margin-right: 10vw;

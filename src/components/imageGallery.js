@@ -3,60 +3,38 @@ import React from "react";
 
 import "../static/css/imageGallery.css"
 
-import imageProduct from "../static/images/image-product-1.jpg";
+import products from "../static/data/products.json"
 
-class productInfo {
-	constructor(parameters) {
-		this.name = parameters.name
-		this.description = parameters.description
-		this.price = parameters.price
-		this.tags = parameters.tags
-		this.discount = parameters.discount
-		this.images = parameters.images
+const LowerGallery = (id) => {
+	const data = products[id];
+	let album = [];
+
+	for (let i = 0; i < data.images.length; i++) {
+		album.push(data.images[i])
 	}
-}
 
-const importData = (location) => {
-
-	const data = import("../static/data/product1.json");
-	console.log(data)
-
-	return new productInfo({
-		name: data.name || "Product",
-		description: data.description || "Description",
-		price: data.price || 9999999,
-		tags: data.tags || ["Men", "Women"],
-		discount: data.discount || 0,
-		images: data.images || false
+	return album.map((value, index) => {
+		return <img className="imageSmall" src={process.env.PUBLIC_URL + value} alt={"Product_" + index} />
 	})
+}
+const Preview = (id) => {
+	const data = products[id];
+
+	if (products[id].images !== true || products[id].images !== false) {
+		return <img className="imagePreview" src={process.env.PUBLIC_URL + data.images[0]} alt="Product 1"/>
+	}
 }
 
 const ImageGallery = (props) => {
-
-	const productData = importData("../static/data/product1.json")
-	/*
-	if (productData.images === false) {
-
-	}
-	else if (productData.images === true) {}
-	else {
-		for (let i = 0; i < productData.images.length; i++) {
-			//let imageCache = [];
-		}
-	}*/
-
-	let htmlTemplate = (
-			<div className="previewContainer">
-				<img className="imagePreview"src={imageProduct} alt="Product 1"/>
-				{productData.name}
-			</div>
-	);
-
+	const id = props.id
 	return (
 		<>
-			{htmlTemplate}
+			{Preview(id)}
+			<div className="albumFlex">
+				{LowerGallery(id)}
+			</div>
 		</>
-	)
+	);
 }
 
 export default ImageGallery;

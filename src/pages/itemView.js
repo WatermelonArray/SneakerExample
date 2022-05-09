@@ -13,7 +13,7 @@ function ItemView() {
 	return (
 		<>
 			<div className="gridLayoutLeft">
-				<ImageGallery />
+				<ImageGallery id={0} />
 			</div>
 			<div className="gridLayoutRight">
 				
