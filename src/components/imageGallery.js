@@ -1,11 +1,14 @@
 // Import libraries
 import React from "react";
 
+// Import css
 import "../static/css/imageGallery.css"
 
+// Import products.json
 import products from "../static/data/products.json"
 
-const LowerGallery = (id) => {
+const ImageGallery = (props) => {
+	const id = props.id;
 	const data = products[id];
 	let album = [];
 
@@ -13,28 +16,33 @@ const LowerGallery = (id) => {
 		album.push(data.images[i])
 	}
 
-	return album.map((value, index) => {
-		return <img className="imageSmall" src={process.env.PUBLIC_URL + value} alt={"Product_" + index} />
-	})
+	return (
+		<div className="albumFlex">
+			{album.map((value, index) => (<img className="imageSmall imageNotSelect" src={process.env.PUBLIC_URL + value} alt={"Product_" + index} />))}
+		</div>
+	)
 }
-const Preview = (id) => {
+const ImagePreview = (props) => {
+	const id = props.id;
 	const data = products[id];
 
 	if (products[id].images !== true || products[id].images !== false) {
-		return <img className="imagePreview" src={process.env.PUBLIC_URL + data.images[0]} alt="Product 1"/>
+		return (
+			<img className="imagePreview" src={process.env.PUBLIC_URL + data.images[0]} alt="Product 1"/>
+		)
 	}
 }
 
-const ImageGallery = (props) => {
+/*const ImageGallery = (props) => {
 	const id = props.id
 	return (
 		<>
 			{Preview(id)}
-			<div className="albumFlex">
+			
 				{LowerGallery(id)}
 			</div>
 		</>
 	);
-}
+}*/
 
-export default ImageGallery;
+export {ImagePreview, ImageGallery};

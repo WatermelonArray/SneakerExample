@@ -1,0 +1,78 @@
+.background {
+
+	display: flex;
+	background-color: hsl(223, 64%, 98%);
+	border-radius: 1rem;
+	border: none;
+
+	color: black;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	flex-direction: row;
+	justify-content :space-between;
+	align-items: center;
+	text-decoration: none;
+
+	margin: 1rem;
+	margin-left: 0;
+	width: 12rem;
+	height: 4rem;
+}
+
+.buttonAdd {
+	margin: 0;
+	padding: 0;
+
+	background-color: hsl(223, 64%, 98%);
+	border-radius: 1rem;
+	border: none;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+
+	color: hsl(26, 100%, 55%);
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 32px;
+	font-weight: 700;
+	text-align: center;
+
+	height: 100%;
+	width: 3rem;
+
+	cursor: pointer;
+
+	transition: 0.3s;
+}
+
+.buttonMinus {
+	margin: 0;
+	padding: 0;
+
+	background-color: hsl(223, 64%, 98%);
+	border-radius: 1rem;
+	border: none;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+
+	color: hsl(26, 100%, 55%);
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size:32px;
+	font-weight: 700;
+	text-align: center;
+
+	height: 100%;
+	width: 3rem;
+
+	cursor: pointer;
+
+	transition: 0.3s;
+}
+
+.buttonAdd:hover {
+	background-color: hsl(25, 100%, 94%);
+}
+
+.buttonMinus:hover {
+	background-color: hsl(25, 100%, 94%);
+}

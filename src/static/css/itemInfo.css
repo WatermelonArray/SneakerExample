@@ -1,0 +1,101 @@
+.textBrand {
+	color: hsl(26, 100%, 55%);
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	text-decoration: none;
+
+	margin: 0;
+	margin-bottom: 1rem;
+}
+.textName {
+	color: black;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 64px;
+
+	margin: 0;
+	margin-bottom: 2rem;
+}
+.textDesc {
+	color: black;
+	opacity: 50%;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	text-decoration: none;
+
+	margin: 0;
+	margin-bottom: 2rem;
+}
+.textPrice {
+	color: black;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+
+	margin: 0;
+}
+.textDiscount {
+	color: black;
+	opacity: 50%;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	text-decoration: line-through;
+
+	margin: 0;
+	margin-bottom: 2rem;
+}
+
+.priceFlex {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	margin-bottom: 0.5rem;
+}
+.discountBox {
+	margin:0;
+	margin-left: 1rem;
+	color: hsl(26, 100%, 55%);
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	background-color: hsl(25, 100%, 94%);
+	padding: 0.2rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	border-radius: 0.5rem;
+	
+}
+
+@media screen and (max-width: 900px) {
+	.textBrand {
+		margin: 0;
+		padding: 0;
+		margin-top: 1rem;
+	}
+	.textName {
+		margin: 0;
+		padding: 0;
+		margin-top: 0.5rem;
+		font-size: 32px;
+	}
+	.textDesc {
+		margin: 0;
+		padding: 0;
+		margin-top: 1rem;
+	}
+	.textDiscount {
+		margin: 0;
+		padding: 0;
+	}
+	.priceFlex {
+		margin: 0;
+		padding: 0;
+	}
+}

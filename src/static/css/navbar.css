@@ -10,6 +10,7 @@ body {
 ul {
 	color: hsl(219, 9%, 45%);
 	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 400;
 	font-size: 16px;
 	text-decoration: none;
 	list-style-type: none;
@@ -105,7 +106,7 @@ ul {
 	height:1pt;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 	.hamburger {
 		display: block;
 	}
