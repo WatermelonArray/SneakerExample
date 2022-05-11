@@ -15,7 +15,7 @@ import "../static/css/itemView.css"
 
 function ItemView() {
 	return (
-		<>
+		<div className="itemViewFlex">
 			<div className="gridLayoutLeft">
 				<ImagePreview id={0} />
 				<ImageGallery id={0} />
@@ -33,7 +33,7 @@ function ItemView() {
 					<Button type="button" text="Add to cart" />
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

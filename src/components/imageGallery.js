@@ -7,6 +7,7 @@ import "../static/css/imageGallery.css"
 // Import products.json
 import products from "../static/data/products.json"
 
+
 const ImageGallery = (props) => {
 	const id = props.id;
 	const data = products[id];
@@ -28,7 +29,11 @@ const ImagePreview = (props) => {
 
 	if (products[id].images !== true || products[id].images !== false) {
 		return (
-			<img className="imagePreview" src={process.env.PUBLIC_URL + data.images[0]} alt="Product 1"/>
+			<div className="previewFlex">
+				<button className="imageButtonLeft">{"<"}</button>
+				<img className="imagePreview" src={process.env.PUBLIC_URL + data.images[0]} alt="Product 1" />
+				<button className="imageButtonRight">{">"}</button>
+			</div>
 		)
 	}
 }

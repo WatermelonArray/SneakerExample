@@ -1,24 +1,34 @@
-.gridLayoutLeft {
+.itemViewFlex {
 	display: flex;
-	float: left;
+	justify-content: center;
+	flex-direction: row;
+}
+.gridLayoutLeft {
+	background-color: aqua;
+	display: flex;
 
-	width: 40vw;
+	z-index: -2;
+	width: 35vw;
 	height: 80vh;
 	margin:0;
 	padding:0;
 	margin-left: 10vw;
+	margin-right: 1rem;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+
 }
 .gridLayoutRight {
-	display: flex;
-	float: right;
+	background-color: brown;
 
-	width: calc(40vw);
+	display: flex;
+
+	width: 35vw;
 	height: 80vh;
 	margin:0;
 	padding:0;
+	margin-left: 1rem;
 	margin-right: 10vw;
 	justify-content: center;
 	align-items: flex-start;
@@ -34,9 +44,10 @@
 }
 
 @media screen and (max-width: 900px) {
+	.itemViewFlex {
+		flex-direction: column;
+	}
 	.gridLayoutLeft {
-
-		float: none;
 		
 		padding:0;
 		margin: 0;
@@ -49,19 +60,16 @@
 
 	}
 	.gridLayoutRight {
-
-		float:none;
-
 		padding:0;
 		margin: 0;
 
-		padding-left: 1rem;
-		padding-right: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
 
 		justify-content: flex-start;
 		align-items: flex-start;
 
-		width: calc(100% - 2rem);
+		width: calc(100% - 4rem);
 		height: 40vh;
 	}
 	.addCart {
@@ -86,4 +94,10 @@
 		justify-content: space-between;
 		align-items: center;
 	}
+}
+
+@media screen and (max-width: 1370px) {
+		.addCart {
+			flex-direction: column;
+		}
 }
