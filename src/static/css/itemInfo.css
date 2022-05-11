@@ -7,6 +7,8 @@
 
 	margin: 0;
 	margin-bottom: 1rem;
+
+	transition: 0.3s;
 }
 .textName {
 	color: black;
@@ -16,6 +18,8 @@
 
 	margin: 0;
 	margin-bottom: 2rem;
+
+	transition: 0.3s;
 }
 .textDesc {
 	color: black;
@@ -27,6 +31,8 @@
 
 	margin: 0;
 	margin-bottom: 2rem;
+
+	transition: 0.3s;
 }
 .textPrice {
 	color: black;
@@ -35,6 +41,8 @@
 	font-size: 32px;
 
 	margin: 0;
+
+	transition: 0.3s;
 }
 .textDiscount {
 	color: black;
@@ -46,6 +54,8 @@
 
 	margin: 0;
 	margin-bottom: 2rem;
+
+	transition: 0.3s;
 }
 
 .priceFlex {
@@ -70,6 +80,8 @@
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	border-radius: 0.5rem;
+
+	transition: 0.3s;
 	
 }
 

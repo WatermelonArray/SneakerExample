@@ -84,15 +84,16 @@ ul {
 .hamburger {
 	position: relative;
 	border: 0;
-	height: 40px;
-	width: 40px;
-	padding: 0.5rem;
+	height: 2rem;
+	width: 2rem;
+	padding: margin 0.5rem;
+
 	cursor: pointer;
 	transition: background-color 0.2s ease-in-out;
 	position: absolute;
-	top: 25%;
-	left: 25px;
-	transform: translateY(-50%);
+	top: 1.6rem;
+	left: 1.4rem;
+
 	display: none;
 	background-color: rgba(0, 0, 0, 0);
 }
@@ -105,18 +106,68 @@ ul {
 	top: 100px;
 	height:1pt;
 }
-
-@media screen and (max-width: 900px) {
-	.hamburger {
-		display: block;
-	}
-	.navbarDiv {
-		height: 4rem;
-	}
-}
-
 .navbarOffset {
 	position: relative;
 	width: 100%;
 	height: 100px;
+}
+
+@media screen and (max-width: 900px) {
+
+	.navbar {
+		margin: 0;
+		padding: 0;
+
+		width: 100vw;
+		height: 100px;
+	}
+	.navbarOffset {
+		width: 100vw;
+		height: 100px;
+	}
+
+	.navbarLogo {
+		margin: 0;
+		padding: 0;
+
+		margin-left: 2rem;
+	}
+	.topbarRight {
+		margin: 0;
+		padding: 0;
+
+		margin-right: 2rem;
+	}
+
+	.topbarLinks {
+		margin: 0;
+		padding: 0;
+
+		margin-left: 1rem;
+	}
+	.navbarLine {
+		display: none;
+	}
+
+
+}
+
+@media screen and (max-width: 650px) {
+	.navbar {
+		width: 100vw;
+		height: 80px;
+	}
+	.navbarOffset {
+		width: 100vw;
+		height: 80px;
+	}
+	.pageLinks {
+		display: none;
+	}
+	.navbarLogo {
+		margin-left: 4rem;
+	}
+	.hamburger {
+		display: block;
+	}
 }
