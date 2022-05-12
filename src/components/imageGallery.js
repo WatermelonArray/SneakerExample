@@ -38,16 +38,4 @@ const ImagePreview = (props) => {
 	}
 }
 
-/*const ImageGallery = (props) => {
-	const id = props.id
-	return (
-		<>
-			{Preview(id)}
-			
-				{LowerGallery(id)}
-			</div>
-		</>
-	);
-}*/
-
 export {ImagePreview, ImageGallery};
