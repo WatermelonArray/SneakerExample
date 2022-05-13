@@ -14,8 +14,8 @@ ul {
 	font-size: 16px;
 	text-decoration: none;
 	list-style-type: none;
-	padding: 0%;
-	margin: 0%;
+	padding: 0;
+	margin: 0;
 }
 
 /* Main layout */
@@ -39,6 +39,16 @@ ul {
 	justify-content: flex-start;
 	flex-direction: row;
 	align-items: center;
+
+	transition: 0.2s;
+}
+.pageLinksClose{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	align-items: center;
+
+	transition: 0.2s;
 }
 .rightContent {
 	width:100%;
@@ -54,16 +64,23 @@ ul {
 	padding-right: 1.5rem;
 }
 .topbarLinks {
+	padding: 0;
+	margin: 0;
 	padding-right: 1.5rem;
+}
+.topbarLinksStyle {
 	color: hsl(219, 9%, 45%);
 	text-decoration: none;
 	cursor: pointer;
 	transition: 0.3s;
 }
-.topbarLinks:hover {
+.topbarLinksStyle:hover {
 	color: hsl(0, 0%, 0%);
 }
 
+.topbarLinksHome {
+	display: none;
+}
 .topbarRight {
 	padding: 0%;
 	margin: 0%;
@@ -96,6 +113,9 @@ ul {
 
 	display: none;
 	background-color: rgba(0, 0, 0, 0);
+
+	fill: black;
+	transition: 0.3s;
 }
 
 .navbarLine {
@@ -162,12 +182,59 @@ ul {
 		height: 80px;
 	}
 	.pageLinks {
-		display: none;
+
+		background-color: hsl(220, 13%, 13%);
+		
+		position: absolute;
+		z-index: 100;
+
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		top: 0;
+		margin: 0;
+		padding: 0;
+
+		width: 200px;
+		height: 100vh;
+
+		left: 0;
+	
+	}
+	.pageLinksClose {
+		background-color: hsl(220, 13%, 13%);
+		
+		position: absolute;
+		z-index: 100;
+
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		top: 0;
+		margin: 0;
+		padding: 0;
+
+		width: 200px;
+		height: 100vh;
+
+		left: -200px;
+	}
+	.topbarLinks {
+		padding: 0;
+		margin: 0;
+		margin-bottom: 0.5rem;
+		margin-top: 0.5rem;
+	}
+	.topbarLinksHome {
+		display: block;
 	}
 	.navbarLogo {
 		margin-left: 4rem;
 	}
 	.hamburger {
 		display: block;
+		z-index: 200;
 	}
 }
