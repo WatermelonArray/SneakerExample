@@ -33,6 +33,25 @@ ul {
 	padding-left: 10vw;
 	padding-right: 10vw;
 	background-color: white;
+
+	z-index: 10;
+
+	
+}
+.dark {
+	display: none;
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 300vw;
+	height: 300vh;
+
+	top: -100vh;
+
+	background-color: black;
+	opacity: 0%;
+	transition: 0.2s;
+	z-index: 1;
 }
 .pageLinks {
 	display: flex;
@@ -40,7 +59,7 @@ ul {
 	flex-direction: row;
 	align-items: center;
 
-	transition: 0.2s;
+	transition: 0;
 }
 .pageLinksClose{
 	display: flex;
@@ -48,7 +67,7 @@ ul {
 	flex-direction: row;
 	align-items: center;
 
-	transition: 0.2s;
+	transition: 0;
 }
 .rightContent {
 	width:100%;
@@ -127,6 +146,7 @@ ul {
 	height:1pt;
 }
 .navbarOffset {
+	z-index: -100;
 	position: relative;
 	width: 100%;
 	height: 100px;
@@ -186,7 +206,7 @@ ul {
 		background-color: hsl(220, 13%, 13%);
 		
 		position: absolute;
-		z-index: 100;
+		z-index: 10;
 
 		flex-direction: column;
 		justify-content: center;
@@ -200,13 +220,15 @@ ul {
 		height: 100vh;
 
 		left: 0;
+
+		transition: 0.2s;
 	
 	}
 	.pageLinksClose {
 		background-color: hsl(220, 13%, 13%);
 		
 		position: absolute;
-		z-index: 100;
+		z-index: 10;
 
 		flex-direction: column;
 		justify-content: center;
@@ -220,6 +242,8 @@ ul {
 		height: 100vh;
 
 		left: -200px;
+
+		transform: 0.2s;
 	}
 	.topbarLinks {
 		padding: 0;
@@ -235,6 +259,9 @@ ul {
 	}
 	.hamburger {
 		display: block;
-		z-index: 200;
+		z-index: 12;
+	}
+	.dark {
+		display: block;
 	}
 }

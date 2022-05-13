@@ -11,29 +11,35 @@ import "../static/css/navbar.css"
 
 let navbarOpen = false;
 
-
+let cartOpen = false;
 
 
 const Navbar = () => {
 
 	const pageLinkRef = useRef(null);
 	const hamburgerRef = useRef(null);
+	const darkRef = useRef(null);
 
 	function toggleNavbar() {
 		navbarOpen = !navbarOpen
 		if (navbarOpen === false) {
-			pageLinkRef.current.className = "pageLinksClose"
+			pageLinkRef.current.className = "pageLinksClose";
+			pageLinkRef.current.style.transition = "0.2s";
 			hamburgerRef.current.style.fill = "black";
+			darkRef.current.style.opacity = "0%";
 		}
 		else {
-			pageLinkRef.current.className = "pageLinks"
-			hamburgerRef.current.style.fill = "hsl(223, 64%, 98%)"
+			pageLinkRef.current.className = "pageLinks";
+			hamburgerRef.current.style.fill = "hsl(223, 64%, 98%)";
+			darkRef.current.style.opacity = "75%";
 		}
 	}
 	function closeNavbar() {
 		navbarOpen = false;
-		pageLinkRef.current.className = "pageLinksClose"
+		pageLinkRef.current.className = "pageLinksClose";
+		pageLinkRef.current.style.transition = "0.2s";
 		hamburgerRef.current.style.fill = "black";
+		darkRef.current.style.opacity = "0%";
 	}
 
 	return (
@@ -41,14 +47,15 @@ const Navbar = () => {
 			<style>
 				@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
 			</style>
-
+	
 			<div className="navbarOffset" />
 
 			<nav className="navbar">
-
+	
 				<button ref={hamburgerRef} onClick={toggleNavbar} className="hamburger">
 					<svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill-rule="evenodd"/></svg>
 				</button>
+	
 				<div className="navbarLogo">
 					<Link to="/">
 						<img src={svgLogo} alt="sneakers"></img>
@@ -80,8 +87,12 @@ const Navbar = () => {
 						</Link>
 					</li>
 				</ul>
+
+				<div ref={darkRef} className="dark" />
+
 				<Outlet />
 			</nav>
+
 			<div className="navbarLine" />
 		</>
 	)

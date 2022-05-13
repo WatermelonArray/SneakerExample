@@ -54,6 +54,14 @@
 	flex-direction: column;
 }
 
+@media screen and (max-height: 670px) {
+
+	.gridLayoutRight {
+		justify-content: flex-end;
+	}
+	
+}
+
 @media screen and (max-width: 900px) {
 	.itemViewFlex {
 		flex-direction: column;
@@ -83,16 +91,6 @@
 		width: calc(100% - 4rem);
 		height: 40vh;
 	}
-	.addCart {
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
-		margin: 0;
-		padding: 0;
-
-		width: 100%;
-	}
 	.priceHolder {
 
 		padding: 0;
@@ -110,5 +108,12 @@
 @media screen and (max-width: 1370px) {
 		.addCart {
 			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			padding: 0;
+			margin: 0;
+
+			width: 100%;
 		}
 }
