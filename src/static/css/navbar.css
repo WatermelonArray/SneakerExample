@@ -111,10 +111,68 @@ ul {
 	text-decoration: none;
 }
 
+.cartBox {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+
+	background-color: white;
+	width: 400px;
+	height: 300px;
+	border-radius: 0.75rem;
+	top: 70px;
+	right: 8vw;
+	box-shadow: 0 2rem 2rem 0 hsl(0, 0%, 0%, 10%), 0 0rem 2rem 0 hsl(0, 0%, 0%, 10%);
+
+	transition: 0.3s;
+
+	opacity: 0%;
+}
+.cartTitle {
+	color: black;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	text-decoration: none;
+	list-style-type: none;
+	padding: 0;
+	margin: 1.5rem;
+}
+.cartLine {
+	width: 100%;
+	height: 1px;
+	background-color: hsl(220, 14%, 75%);
+}
+.cartContainer {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	height: calc(100% - 3rem - 21px);
+}
+.cartEmpty {
+	position: relative;
+	color: hsl(219, 9%, 45%);
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	align-self: center;
+}
 .imageProfile {
 	position: relative;
 	height: 42px;
 	width: 42px;
+	opacity: 100%;
+	transition: 0.3s;
+}
+.imageProfile:hover {
+	opacity: 75%;;
 }
 
 .hamburger {
@@ -136,7 +194,30 @@ ul {
 	fill: black;
 	transition: 0.3s;
 }
+.hamburgerSVG {
+	filter: grayscale(100);
+	filter: contrast(100);
 
+	transition: 0.3s;
+
+	z-index: 14;
+}
+.hamburgerSVGOpen {
+	filter: grayscale(100);
+	filter: contrast(-70);
+
+	transition: 0.3s;
+	
+	z-index: 14;
+}
+.cartSVG {
+	transition: 0.3s;
+}
+.cartSVG:hover {
+	filter: brightness(30%);
+	transition: 0.3s;
+	cursor: pointer;
+}
 .navbarLine {
 	position: fixed;
 	background-color: hsl(220, 14%, 75%);
@@ -263,5 +344,12 @@ ul {
 	}
 	.dark {
 		display: block;
+	}
+	.cartSVG {
+		z-index: 20;
+	}
+	.cartBox {
+		width: calc(100% - 2rem);
+		left: 1rem;
 	}
 }

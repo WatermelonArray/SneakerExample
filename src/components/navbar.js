@@ -4,32 +4,33 @@ import { Outlet, Link } from "react-router-dom";
 
 import svgLogo from "../static/svgs/logo.svg";
 import svgCart from "../static/svgs/cart.svg";
-//import svgBurger from "../static/svgs/burger.svg";
+import svgBurger from "../static/svgs/burger.svg";
 import svgProfile from "../static/images/image-avatar.png";
 
 import "../static/css/navbar.css"
 
 let navbarOpen = false;
-
 let cartOpen = false;
-
 
 const Navbar = () => {
 
 	const pageLinkRef = useRef(null);
 	const hamburgerRef = useRef(null);
 	const darkRef = useRef(null);
+	const cartCVGRef = useRef(null);
+	const cartBoxRef = useRef(null);
 
 	function toggleNavbar() {
 		navbarOpen = !navbarOpen
 		if (navbarOpen === false) {
 			pageLinkRef.current.className = "pageLinksClose";
+			hamburgerRef.current.className = "hamburgerSVG";
 			pageLinkRef.current.style.transition = "0.2s";
-			hamburgerRef.current.style.fill = "black";
 			darkRef.current.style.opacity = "0%";
 		}
 		else {
 			pageLinkRef.current.className = "pageLinks";
+			hamburgerRef.current.className = "hamburgerSVGOpen";
 			hamburgerRef.current.style.fill = "hsl(223, 64%, 98%)";
 			darkRef.current.style.opacity = "75%";
 		}
@@ -37,9 +38,23 @@ const Navbar = () => {
 	function closeNavbar() {
 		navbarOpen = false;
 		pageLinkRef.current.className = "pageLinksClose";
+		hamburgerRef.current.className = "hamburgerSVG";
 		pageLinkRef.current.style.transition = "0.2s";
 		hamburgerRef.current.style.fill = "black";
 		darkRef.current.style.opacity = "0%";
+	}
+	function toggleCart() {
+		cartOpen = !cartOpen;
+		
+		if (cartOpen === false) {
+			cartBoxRef.current.style.opacity = "0%";
+			cartBoxRef.current.style.top = "70px";
+		}
+		else {
+			cartBoxRef.current.style.opacity = "100%";
+			cartBoxRef.current.style.top = "80px";
+			
+		}
 	}
 
 	return (
@@ -52,8 +67,8 @@ const Navbar = () => {
 
 			<nav className="navbar">
 	
-				<button ref={hamburgerRef} onClick={toggleNavbar} className="hamburger">
-					<svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill-rule="evenodd"/></svg>
+				<button onClick={toggleNavbar} className="hamburger">
+					<img ref={hamburgerRef} src={svgBurger} className="hamburgerSVG" alt="Menu" />
 				</button>
 	
 				<div className="navbarLogo">
@@ -77,9 +92,16 @@ const Navbar = () => {
 
 				<ul className="rightContent">
 					<li className="topbarRight">
-						<Link className="topbarText" to="/collections">
-							<img src={svgCart} alt="Cart"></img>
-						</Link>
+						<div onClick={toggleCart} className="topbarText" to="/collections">
+							<img ref={cartCVGRef} src={svgCart} className="cartSVG" alt="Cart"></img>
+						</div>
+						<div ref={cartBoxRef} className="cartBox">
+							<p className="cartTitle">Cart</p>
+							<div className="cartLine" />
+							<div className="cartContainer">
+								<p className="cartEmpty">Your cart is empty.</p>
+							</div>
+						</div>
 					</li>
 					<li className="topbarRight">
 						<Link className="topbarText" to="/collections">
@@ -87,6 +109,8 @@ const Navbar = () => {
 						</Link>
 					</li>
 				</ul>
+
+				
 
 				<div ref={darkRef} className="dark" />
 
