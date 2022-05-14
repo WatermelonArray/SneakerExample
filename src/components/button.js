@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "../static/css/button.css";
 
-function Button(props) {
+const Button = (props) => {
 	if (props.type === "button") { 
 		return (
 			<>

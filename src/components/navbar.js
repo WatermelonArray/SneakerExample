@@ -1,11 +1,15 @@
 // Import libraries
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import svgLogo from "../static/svgs/logo.svg";
 import svgCart from "../static/svgs/cart.svg";
 import svgBurger from "../static/svgs/burger.svg";
 import svgProfile from "../static/images/image-avatar.png";
+
+import CartContents from "./cartContents";
+
+import { Button } from "../components/button";
 
 import "../static/css/navbar.css"
 
@@ -19,7 +23,36 @@ const Navbar = () => {
 	const darkRef = useRef(null);
 	const cartCVGRef = useRef(null);
 	const cartBoxRef = useRef(null);
+	const cartContainerRef = useRef(null);
+	const cartEmptyRef = useRef(null);
 
+	function toggleCart() {
+		cartOpen = !cartOpen;
+		
+		if (cartOpen === false) {
+			cartBoxRef.current.style.opacity = "0%";
+			cartBoxRef.current.style.top = "70px";
+		}
+		else {
+			cartBoxRef.current.style.opacity = "100%";
+			cartBoxRef.current.style.top = "80px";
+
+			if (localStorage.getItem("cart") === null) {
+				cartEmptyRef.current.style.display = "block";
+				cartContainerRef.current.style["justify-content"] = "center";
+			}
+			else {
+				cartEmptyRef.current.style.display = "none";
+				cartContainerRef.current.style["justify-content"] = "flex-start";
+			}
+			
+		}
+	}
+	function closeCart() {
+		cartOpen = false;
+		cartBoxRef.current.style.opacity = "0%";
+		cartBoxRef.current.style.top = "70px";
+	}
 	function toggleNavbar() {
 		navbarOpen = !navbarOpen
 		if (navbarOpen === false) {
@@ -36,6 +69,7 @@ const Navbar = () => {
 		}
 	}
 	function closeNavbar() {
+		closeCart();
 		navbarOpen = false;
 		pageLinkRef.current.className = "pageLinksClose";
 		hamburgerRef.current.className = "hamburgerSVG";
@@ -43,20 +77,7 @@ const Navbar = () => {
 		hamburgerRef.current.style.fill = "black";
 		darkRef.current.style.opacity = "0%";
 	}
-	function toggleCart() {
-		cartOpen = !cartOpen;
-		
-		if (cartOpen === false) {
-			cartBoxRef.current.style.opacity = "0%";
-			cartBoxRef.current.style.top = "70px";
-		}
-		else {
-			cartBoxRef.current.style.opacity = "100%";
-			cartBoxRef.current.style.top = "80px";
-			
-		}
-	}
-
+	
 	return (
 		<>	
 			<style>
@@ -73,7 +94,7 @@ const Navbar = () => {
 	
 				<div className="navbarLogo">
 					<Link to="/">
-						<img src={svgLogo} alt="sneakers"></img>
+						<img onClick={closeNavbar} src={svgLogo} alt="sneakers"></img>
 					</Link>
 				</div>
 
@@ -98,14 +119,16 @@ const Navbar = () => {
 						<div ref={cartBoxRef} className="cartBox">
 							<p className="cartTitle">Cart</p>
 							<div className="cartLine" />
-							<div className="cartContainer">
-								<p className="cartEmpty">Your cart is empty.</p>
+							<div ref={cartContainerRef} className="cartContainer">
+								<p ref={cartEmptyRef} className="cartEmpty">Your cart is empty.</p>
+								<CartContents />
 							</div>
+							<Button type="button" text="Checkout" />
 						</div>
 					</li>
 					<li className="topbarRight">
 						<Link className="topbarText" to="/collections">
-						<img className="imageProfile" src={svgProfile} alt="Account"></img>
+							<img className="imageProfile" src={svgProfile} alt="Account"></img>
 						</Link>
 					</li>
 				</ul>

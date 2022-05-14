@@ -31,8 +31,6 @@
 .gridLayoutRight {
 	display: flex;
 
-	background-color: blueviolet;
-
 	width: 35vw;
 	height: calc(100vh - 200px - 2rem);
 

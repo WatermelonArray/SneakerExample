@@ -1,37 +1,84 @@
-
-.button {
+.itemFlex {
 	display: flex;
-	background-color: hsl(26, 100%, 55%);
-	box-shadow: 0 2rem 2rem 0 hsl(25, 100%, 94%), 0 0rem 2rem 0 hsl(25, 100%, 94%);
-	border-radius: 1rem;
-	border: none;
-
-	color: white;
+	color: black;
 	font-family: 'Kumbh Sans', sans-serif;
 	font-size: 16px;
 	text-align: center;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	text-decoration: none;
 
-	margin: 1rem;
-	width: 16rem;
-	height: 4rem;
-	cursor: pointer;
+	margin: 0;
+	padding: 0;
 
-	transition: 0.3s;
+	width: 100%;
+	height: 5rem;
 }
 
-.button:hover {
-	background-color: hsl(26, 100%, 67%);
+.productImage {
+	margin: 0;
+	padding: 0;
+
+	min-width: 30px;
+	min-height: 30px;
+	max-height: calc(100% - 2rem);
+	max-width: calc(100% - 2rem);
+	width: auto;
+	height: auto;
+	margin-left: 1rem;
+	margin-right: 1rem;
+
+	border-radius: 0.25rem;
 }
 
-@media screen and (max-width: 900px) {
-	.button {
-		margin: 0;
-		padding: 0;
+.itemDescription {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	width: 100%;
+	height: 100%
+}
+.itemPriceFlex {
+	display: flex;
+	margin: 0;
+	padding: 0;
 
-		margin-top: 1rem;
-		width: 100%;
-	}
+	flex-direction: row;
+}
+.itemTextThin {
+	color: black;
+	opacity: 50%;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	text-decoration: none;
+	text-align: start;
+
+	margin: 0;
+	padding: 0;
+
+	margin-top: 0.1rem;
+	margin-bottom: 0.1rem;
+}
+.itemTextBold {
+	color: black;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	text-decoration: none;
+	text-align: start;
+
+	margin: 0;
+	padding: 0;
+
+	margin-left: 0.5rem;
+	margin-top: 0.1rem;
+	margin-bottom: 0.1rem;
+}
+.itemTrash {
+	display: flex;
+	width: 24px;
+	height: 18px;
+	margin-right: 1rem;
 }
