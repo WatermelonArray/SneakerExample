@@ -11,21 +11,35 @@ import "../static/css/cartContents.css";
 
 localStorage.setItem("cart", JSON.stringify({
 	"0": {id: 0, amount: 2},
-	"1": {id: 0, amount: 4}
+	"1": {id: 0, amount: 2},
+	"2": {id: 0, amount: 2}
 }))
 
 /*localStorage.removeItem("cart");*/
 
-const CartContents = () => {
-	
+const CartContents = (props) => {
+
+	const removeItem = (index) => {
+
+		const data = localStorage.getItem("cart");
+
+		let cart = Object.values(JSON.parse(data));
+
+		console.log(cart)
+		cart.splice(index, 1)
+		console.log(cart)
+
+		localStorage.setItem("cart", cart);
+
+	}
+
 	const data = localStorage.getItem("cart");
 
 	const trashCVGRef = useRef(null)
 
 	if (data !== null) {
-		const cart = Object.values(JSON.parse(data));
 
-		console.log(cart)
+		const cart = Object.values(JSON.parse(data));
 
 		return (
 			<>
@@ -52,7 +66,7 @@ const CartContents = () => {
 								</div>
 							</div>
 							<div className="itemTrash">
-								<img ref={trashCVGRef} src={svgTrash} className="cartSVG" alt="Cart"></img>
+								<img ref={trashCVGRef} src={svgTrash} onClick={() => {props.callback(index)}} className="cartSVG" alt="Cart"></img>
 							</div>
 						</div>
 					</>

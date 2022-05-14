@@ -11,7 +11,7 @@ import CartContents from "./cartContents";
 
 import { Button } from "../components/button";
 
-import "../static/css/navbar.css"
+import "../static/css/navbar.css";
 
 let navbarOpen = false;
 let cartOpen = false;
@@ -28,14 +28,15 @@ const Navbar = () => {
 
 	function toggleCart() {
 		cartOpen = !cartOpen;
-		
 		if (cartOpen === false) {
 			cartBoxRef.current.style.opacity = "0%";
 			cartBoxRef.current.style.top = "70px";
+			cartBoxRef.current.style["pointer-events"] = "none";
 		}
 		else {
 			cartBoxRef.current.style.opacity = "100%";
 			cartBoxRef.current.style.top = "80px";
+			cartBoxRef.current.style["pointer-events"] = "auto";
 
 			if (localStorage.getItem("cart") === null) {
 				cartEmptyRef.current.style.display = "block";
@@ -45,7 +46,6 @@ const Navbar = () => {
 				cartEmptyRef.current.style.display = "none";
 				cartContainerRef.current.style["justify-content"] = "flex-start";
 			}
-			
 		}
 	}
 	function closeCart() {
@@ -60,12 +60,14 @@ const Navbar = () => {
 			hamburgerRef.current.className = "hamburgerSVG";
 			pageLinkRef.current.style.transition = "0.2s";
 			darkRef.current.style.opacity = "0%";
+			darkRef.current.style["pointer-events"] = "none";
 		}
 		else {
 			pageLinkRef.current.className = "pageLinks";
 			hamburgerRef.current.className = "hamburgerSVGOpen";
 			hamburgerRef.current.style.fill = "hsl(223, 64%, 98%)";
 			darkRef.current.style.opacity = "75%";
+			darkRef.current.style["pointer-events"] = "auto";
 		}
 	}
 	function closeNavbar() {
@@ -123,7 +125,7 @@ const Navbar = () => {
 								<p ref={cartEmptyRef} className="cartEmpty">Your cart is empty.</p>
 								<CartContents />
 							</div>
-							<Button type="button" text="Checkout" />
+							<Button type="button" text="Checkout" styleClass="checkout" />
 						</div>
 					</li>
 					<li className="topbarRight">

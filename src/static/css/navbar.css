@@ -52,6 +52,8 @@ ul {
 	opacity: 0%;
 	transition: 0.2s;
 	z-index: 1;
+
+	pointer-events: none;
 }
 .pageLinks {
 	display: flex;
@@ -117,14 +119,16 @@ ul {
 	padding: 0;
 
 	background-color: white;
-	width: 400px;
-	height: 300px;
+	width: 350px;
+	height: 250px;
 	border-radius: 0.75rem;
 	top: 70px;
 	right: 8vw;
 	box-shadow: 0 2rem 2rem 0 hsl(0, 0%, 0%, 10%), 0 0rem 2rem 0 hsl(0, 0%, 0%, 10%);
 
 	transition: 0.3s;
+
+	pointer-events: none;
 
 	opacity: 0%;
 }
@@ -149,7 +153,7 @@ ul {
 	justify-content: center;
 	margin: 0;
 	padding: 0;
-	height: calc(100% - 3rem - 21px);
+	height: calc(100% - 3rem - 21px - 6rem);
 }
 .cartEmpty {
 	position: relative;

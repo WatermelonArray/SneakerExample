@@ -2,9 +2,13 @@ import React from "react";
 
 import { Button } from "../components/button";
 
+import "../static/css/collections.css";
+
 function collections() {
 	return (
-		<Button type="link" to="/itemView" text="Hello world" />
+		<div className="collectionsFlex">
+			<Button type="link" to="/itemView" text="View item" styleClass="collections"/>
+		</div>
 	);
 }
 

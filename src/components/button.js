@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import "../static/css/button.css";
 
 const Button = (props) => {
+
 	if (props.type === "button") { 
 		return (
 			<>
-				<button className="button">
+				<button className={"button " + (props.styleClass || "")}>
 					{props.text}
 				</button>
 			</>
@@ -16,7 +17,7 @@ const Button = (props) => {
 	else if(props.type === "link") {
 		return (
 			<>
-				<Link className="button" to={props.to || "/"}>
+				<Link className={"button " + (props.styleClass || "")} to={props.to || "/"}>
 					{props.text}
 				</Link>
 			</>
@@ -25,7 +26,7 @@ const Button = (props) => {
 	else {
 		return (
 			<>
-				<button className="button">
+				<button className={"button " + (props.styleClass || "")}>
 					{props.text}
 				</button>
 			</>

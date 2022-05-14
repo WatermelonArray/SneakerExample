@@ -30,7 +30,7 @@ function ItemView() {
 				</div>
 				<div className="addCart">
 					<Selector />
-					<Button type="button" text="Add to cart" />
+					<Button type="button" text="Add to cart" styleClass="addToCart" />
 				</div>
 			</div>
 		</div>
