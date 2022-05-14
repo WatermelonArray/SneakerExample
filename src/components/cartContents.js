@@ -8,42 +8,52 @@ import svgTrash from "../static/svgs/trash.svg";
 
 import "../static/css/cartContents.css";
 
-
+/*
 localStorage.setItem("cart", JSON.stringify({
-	"0": {id: 0, amount: 2},
-	"1": {id: 0, amount: 2},
-	"2": {id: 0, amount: 2}
+	"0": {id: 0, amount: 2}
 }))
+*/
 
 /*localStorage.removeItem("cart");*/
 
-const CartContents = (props) => {
-
-	const removeItem = (index) => {
-
-		const data = localStorage.getItem("cart");
-
-		let cart = Object.values(JSON.parse(data));
-
-		console.log(cart)
-		cart.splice(index, 1)
-		console.log(cart)
-
-		localStorage.setItem("cart", cart);
-
-	}
-
+const getCart = () => {
 	const data = localStorage.getItem("cart");
 
-	const trashCVGRef = useRef(null)
-
 	if (data !== null) {
+		return Object.values(JSON.parse(data));
+	}
+	else {
+		return null;
+	}
+}
 
-		const cart = Object.values(JSON.parse(data));
+class CartContents extends React.Component {
+
+	constructor() { super(); this.state = {cart: getCart()}; }
+
+	removeItem = (index) => {
+
+		let newCart = this.state.cart;
+		this.state.cart.splice(index, 1)
+
+		localStorage.setItem("cart", JSON.stringify(newCart));
+
+		if (newCart.length === 0) {
+			newCart = null;
+			localStorage.removeItem("cart");
+			this.props.callback();
+		}
+
+		this.setState({"cart": newCart});
+	
+	};
+
+	render() {
+	if (this.state.cart !== null) {
 
 		return (
 			<>
-				{cart.map((value, index) => (
+				{this.state.cart.map((value, index) => (
 					<>
 						<div className="itemFlex">
 							<img className="productImage" src={process.env.PUBLIC_URL + products[value.id].images[0]} />
@@ -66,7 +76,7 @@ const CartContents = (props) => {
 								</div>
 							</div>
 							<div className="itemTrash">
-								<img ref={trashCVGRef} src={svgTrash} onClick={() => {props.callback(index)}} className="cartSVG" alt="Cart"></img>
+								<img src={svgTrash} onClick={() => {this.removeItem(index)}} className="cartSVG" alt="Cart"></img>
 							</div>
 						</div>
 					</>
@@ -75,6 +85,7 @@ const CartContents = (props) => {
 		)
 	}
 	else {return(<></>)}
-}
+	};
+};
 
 export default CartContents

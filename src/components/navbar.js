@@ -1,5 +1,5 @@
 // Import libraries
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import svgLogo from "../static/svgs/logo.svg";
@@ -25,8 +25,9 @@ const Navbar = () => {
 	const cartBoxRef = useRef(null);
 	const cartContainerRef = useRef(null);
 	const cartEmptyRef = useRef(null);
+	const cartCheckoutREF = useRef(null);
 
-	function toggleCart() {
+	const toggleCart = () => {
 		cartOpen = !cartOpen;
 		if (cartOpen === false) {
 			cartBoxRef.current.style.opacity = "0%";
@@ -48,12 +49,24 @@ const Navbar = () => {
 			}
 		}
 	}
-	function closeCart() {
+	const closeCart = () => {
 		cartOpen = false;
 		cartBoxRef.current.style.opacity = "0%";
 		cartBoxRef.current.style.top = "70px";
 	}
-	function toggleNavbar() {
+	const checkCart = () => {
+		if (localStorage.getItem("cart") === null) {
+			cartEmptyRef.current.style.display = "block";
+			cartContainerRef.current.style["justify-content"] = "center";
+			cartCheckoutREF.current.style.display = "none"
+		}
+		else {
+			cartEmptyRef.current.style.display = "none";
+			cartContainerRef.current.style["justify-content"] = "flex-start";
+			cartCheckoutREF.current.style.display = "block"
+		}
+	}
+	const toggleNavbar = () => {
 		navbarOpen = !navbarOpen
 		if (navbarOpen === false) {
 			pageLinkRef.current.className = "pageLinksClose";
@@ -70,7 +83,7 @@ const Navbar = () => {
 			darkRef.current.style["pointer-events"] = "auto";
 		}
 	}
-	function closeNavbar() {
+	const closeNavbar = () => {
 		closeCart();
 		navbarOpen = false;
 		pageLinkRef.current.className = "pageLinksClose";
@@ -79,7 +92,9 @@ const Navbar = () => {
 		hamburgerRef.current.style.fill = "black";
 		darkRef.current.style.opacity = "0%";
 	}
-	
+
+	useEffect(checkCart)
+
 	return (
 		<>	
 			<style>
@@ -115,17 +130,17 @@ const Navbar = () => {
 
 				<ul className="rightContent">
 					<li className="topbarRight">
-						<div onClick={toggleCart} className="topbarText" to="/collections">
+						<div onClick={toggleCart} className="topbarText">
 							<img ref={cartCVGRef} src={svgCart} className="cartSVG" alt="Cart"></img>
 						</div>
 						<div ref={cartBoxRef} className="cartBox">
 							<p className="cartTitle">Cart</p>
 							<div className="cartLine" />
-							<div ref={cartContainerRef} className="cartContainer">
+							<div ref={cartContainerRef} className="cartContainer" onChange={() => {console.log("Changed")}}>
 								<p ref={cartEmptyRef} className="cartEmpty">Your cart is empty.</p>
-								<CartContents />
+								<CartContents callback={checkCart} />
 							</div>
-							<Button type="button" text="Checkout" styleClass="checkout" />
+							<Button refVar={cartCheckoutREF} type="button" text="Checkout" styleClass="checkout" />
 						</div>
 					</li>
 					<li className="topbarRight">

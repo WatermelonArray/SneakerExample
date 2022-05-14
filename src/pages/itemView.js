@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { Button } from "../components/button";
 import { Selector } from "../components/selector";
@@ -10,10 +10,27 @@ import { ItemBrand, ItemName, ItemDescription, ItemPrice, ItemDiscountPrice} fro
 
 import "../static/css/itemView.css"
 
-// Variables
-//let currentProduct
 
-function ItemView() {
+
+const ItemView = () => {
+
+	const amountRef = useRef(null);
+
+	const addToCart = (item) => {
+		const data = localStorage.getItem("cart");
+		let cart = [];
+
+		if (data !== null) {
+			cart = Object.keys(JSON.parse(data));
+		}
+		
+		cart.push(
+			{id: item, amount: amountRef.current.state.count}
+		)
+
+		localStorage.setItem("cart", JSON.stringify(cart))
+	}
+
 	return (
 		<div className="itemViewFlex">
 			<div className="gridLayoutLeft">
@@ -29,8 +46,8 @@ function ItemView() {
 					<ItemDiscountPrice id={0} />
 				</div>
 				<div className="addCart">
-					<Selector />
-					<Button type="button" text="Add to cart" styleClass="addToCart" />
+					<Selector ref={amountRef} />
+					<Button callback={() => {addToCart(0)}} type="button" text="Add to cart" styleClass="addToCart" />
 				</div>
 			</div>
 		</div>

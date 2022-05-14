@@ -289,18 +289,20 @@ ul {
 	}
 	.pageLinks {
 
-		background-color: hsl(220, 13%, 13%);
+		background-color: white;
 		
 		position: absolute;
 		z-index: 10;
 
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		justify-content: flex-start;
+		align-items: flex-start;
 
 		top: 0;
 		margin: 0;
 		padding: 0;
+
+		padding-top: 6rem;
 
 		width: 200px;
 		height: 100vh;
@@ -311,18 +313,20 @@ ul {
 	
 	}
 	.pageLinksClose {
-		background-color: hsl(220, 13%, 13%);
+		background-color: white;
 		
 		position: absolute;
 		z-index: 10;
 
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		justify-content: flex-start;
+		align-items: flex-start;
 
 		top: 0;
 		margin: 0;
 		padding: 0;
+
+		padding-top: 6rem;
 
 		width: 200px;
 		height: 100vh;
@@ -336,6 +340,14 @@ ul {
 		margin: 0;
 		margin-bottom: 0.5rem;
 		margin-top: 0.5rem;
+		margin-left: 2rem;
+
+		color: black;
+		font-weight: 700;
+	}
+	.topbarLinksStyle {
+		color: black;
+		font-weight: 700;
 	}
 	.topbarLinksHome {
 		display: block;

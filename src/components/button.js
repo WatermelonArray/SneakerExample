@@ -5,10 +5,11 @@ import "../static/css/button.css";
 
 const Button = (props) => {
 
+
 	if (props.type === "button") { 
 		return (
 			<>
-				<button className={"button " + (props.styleClass || "")}>
+				<button onClick={props.callback || null} ref={props.refVar || null} className={"button " + (props.styleClass || "")}>
 					{props.text}
 				</button>
 			</>
@@ -17,7 +18,7 @@ const Button = (props) => {
 	else if(props.type === "link") {
 		return (
 			<>
-				<Link className={"button " + (props.styleClass || "")} to={props.to || "/"}>
+				<Link onClick={props.callback || null} ref={props.refVar || null} className={"button " + (props.styleClass || "")} to={props.to || "/"}>
 					{props.text}
 				</Link>
 			</>
@@ -26,7 +27,7 @@ const Button = (props) => {
 	else {
 		return (
 			<>
-				<button className={"button " + (props.styleClass || "")}>
+				<button onClick={props.callback || null} ref={props.refVar || null} className={"button " + (props.styleClass || "")}>
 					{props.text}
 				</button>
 			</>
