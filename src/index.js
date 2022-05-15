@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Import components
-import Navbar from "./components/navbar"
+import { Navbar, cartCallback } from "./components/navbar"
 
 // Import pages
 import Home from "./pages/home";
@@ -18,7 +18,7 @@ export default function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="collections" element={<Collections />} />
-					<Route path="itemView" element={<ItemView />} />
+					<Route path="itemView" element={<ItemView callback={cartCallback} />} />
 				</Routes>
 			</BrowserRouter>
 		</>

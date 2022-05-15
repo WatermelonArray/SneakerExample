@@ -10,9 +10,7 @@ import { ItemBrand, ItemName, ItemDescription, ItemPrice, ItemDiscountPrice} fro
 
 import "../static/css/itemView.css"
 
-
-
-const ItemView = () => {
+const ItemView = (props) => {
 
 	const amountRef = useRef(null);
 
@@ -21,14 +19,30 @@ const ItemView = () => {
 		let cart = [];
 
 		if (data !== null) {
-			cart = Object.keys(JSON.parse(data));
+			cart = JSON.parse(data);
 		}
-		
-		cart.push(
-			{id: item, amount: amountRef.current.state.count}
-		)
+
+		const result = cart.filter((value) => {
+			return value.id === item
+		})
+
+		if (result.length === 0) {
+			cart.push(
+				{id: item, amount: amountRef.current.state.count}
+			)
+		}
+		else {
+			cart.filter((value, index) => {
+				if (value.id === item) {
+					cart[index].amount = amountRef.current.state.count
+				}
+			});
+		}
 
 		localStorage.setItem("cart", JSON.stringify(cart))
+
+		
+		props.callback();
 	}
 
 	return (

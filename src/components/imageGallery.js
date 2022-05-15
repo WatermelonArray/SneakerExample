@@ -7,6 +7,11 @@ import "../static/css/imageGallery.css"
 // Import products.json
 import products from "../static/data/products.json"
 
+let toggle = false;
+
+const fullscreenPreview = () => {
+	console.log(toggle)
+}
 
 const ImageGallery = (props) => {
 	const id = props.id;
@@ -19,10 +24,11 @@ const ImageGallery = (props) => {
 
 	return (
 		<div className="albumFlex">
-			{album.map((value, index) => (<img className="imageSmall imageNotSelect" src={process.env.PUBLIC_URL + value} alt={"Product_" + index} />))}
+			{album.map((value, index) => (<img key={index} className="imageSmall imageNotSelect" src={process.env.PUBLIC_URL + value} alt={"Product_" + index} />))}
 		</div>
 	)
 }
+
 const ImagePreview = (props) => {
 	const id = props.id;
 	const data = products[id];
@@ -31,7 +37,7 @@ const ImagePreview = (props) => {
 		return (
 			<div className="previewFlex">
 				<button className="imageButtonLeft">{"<"}</button>
-				<img className="imagePreview" src={process.env.PUBLIC_URL + data.images[0]} alt="Product 1" />
+				<img onClick={fullscreenPreview} className="imagePreview" src={process.env.PUBLIC_URL + data.images[0]} alt="Product 1" />
 				<button className="imageButtonRight">{">"}</button>
 			</div>
 		)

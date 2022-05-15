@@ -16,6 +16,8 @@ import "../static/css/navbar.css";
 let navbarOpen = false;
 let cartOpen = false;
 
+let cartCallback = () => {};
+
 const Navbar = () => {
 
 	const pageLinkRef = useRef(null);
@@ -26,6 +28,8 @@ const Navbar = () => {
 	const cartContainerRef = useRef(null);
 	const cartEmptyRef = useRef(null);
 	const cartCheckoutREF = useRef(null);
+
+	const cartContentRefs = useRef(null)
 
 	const toggleCart = () => {
 		cartOpen = !cartOpen;
@@ -50,7 +54,6 @@ const Navbar = () => {
 		}
 	}
 	const closeCart = () => {
-		cartOpen = false;
 		cartBoxRef.current.style.opacity = "0%";
 		cartBoxRef.current.style.top = "70px";
 	}
@@ -93,7 +96,9 @@ const Navbar = () => {
 		darkRef.current.style.opacity = "0%";
 	}
 
-	useEffect(checkCart)
+	useEffect(() => {
+		checkCart()
+	})
 
 	return (
 		<>	
@@ -138,7 +143,8 @@ const Navbar = () => {
 							<div className="cartLine" />
 							<div ref={cartContainerRef} className="cartContainer" onChange={() => {console.log("Changed")}}>
 								<p ref={cartEmptyRef} className="cartEmpty">Your cart is empty.</p>
-								<CartContents callback={checkCart} />
+								
+								<CartContents ref={cartContentRefs} callback={checkCart} />
 							</div>
 							<Button refVar={cartCheckoutREF} type="button" text="Checkout" styleClass="checkout" />
 						</div>
@@ -162,4 +168,4 @@ const Navbar = () => {
 	)
 }
 
-export default Navbar
+export { Navbar, cartCallback }
