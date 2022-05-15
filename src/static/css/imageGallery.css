@@ -214,7 +214,7 @@
 	position: fixed;
 	z-index: 60;
 	top: 2rem;
-	right: 32%;
+	right: 2rem;
 
 	cursor: pointer;
 }
@@ -230,6 +230,11 @@
 	margin-left: 1rem;
 	margin-right: 1rem;
 	cursor: pointer;
+
+	transition: 0.3s;
+}
+.imageSmall:hover {
+	opacity: 50%;
 }
 
 .albumFlex {
@@ -264,9 +269,7 @@
 	border-color: hsl(26, 100%, 55%);
 	border-style: solid;
 }
-.imageSelected:hover {
-	opacity: 50%;
-}
+
 @media screen and (max-width: 900px) {
 	.imagePreview {
 
@@ -285,6 +288,10 @@
 	.imagePreview:hover {
 		opacity: 100%;
 	}
+	.previewFlexFULL {
+		display: none;
+	}
+
 	.previewFlex {
 		margin: 0;
 		padding: 0;

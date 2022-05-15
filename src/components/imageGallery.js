@@ -24,8 +24,8 @@ class ImagePreview extends React.Component {
 
 		this.state = {
 			refs: {},
-			currentIndex: 0,
-			selectedArray: [],
+			currentIndex1: 0,
+			currentIndex2: 0,
 			album: []
 		}
 		this.id = props.id;
@@ -39,90 +39,115 @@ class ImagePreview extends React.Component {
 
 	}
 
-	classResult = (index) => {
+	classResult = (index, fullscreen) => {
 
 		let result = "imageSmall";
 
-		if (this.state.currentIndex === index) {
+		if (fullscreen === false && this.state.currentIndex1 === index) {
+			result = result + " imageSelected"
+		}
+		else if (fullscreen === true && this.state.currentIndex2 === index) {
 			result = result + " imageSelected"
 		}
 
 		return result;
 	}
-	changeToImage = (index) => {
+	changeToImage = (index, fullscreen) => {
 
+		if (fullscreen === false) {
 			this.state.refs.imgRef1.current.src = process.env.PUBLIC_URL + products[this.id].images[index]
 			this.state.refs.imgRef1.current.alt = "Product " + index
-			this.setState({"currentIndex": index});
-			
+			this.setState({"currentIndex1": index});
+		}
+		else if (fullscreen === true) {
+			this.state.refs.imgRef2.current.src = process.env.PUBLIC_URL + products[this.id].images[index]
+			this.state.refs.imgRef2.current.alt = "Product " + index
+			this.setState({"currentIndex2": index});
+		}
 	}
 
-	smallGallery1 = (index) => {
+	smallGallery = (index, fullscreen) => {
 
-		return (<img 
-			key={index}
-			onClick={this.changeToImage.bind(this.state.refs.imgRef1, index)}
-			className={this.classResult(index)}
-			src={process.env.PUBLIC_URL + products[this.id].images[index]}
-			alt={"Product_" + index}
-		/>)
+		if (fullscreen === false) {
+			return (<img 
+				key={index}
+				onClick={this.changeToImage.bind(this.state.refs.imgRef1, index, fullscreen)}
+				className={this.classResult(index, fullscreen)}
+				src={process.env.PUBLIC_URL + products[this.id].images[index]}
+				alt={"Product_" + index}
+			/>)
+		}
+		else if (fullscreen === true) {
+			return (<img 
+				key={index}
+				onClick={this.changeToImage.bind(this.state.refs.imgRef2, index, fullscreen)}
+				className={this.classResult(index, fullscreen)}
+				src={process.env.PUBLIC_URL + products[this.id].images[index]}
+				alt={"Product_" + index}
+			/>)
+		}
 	}
-	changeImage1 = (dir) => {
+	changeImage = (dir, fullscreen) => {
 
-		if (dir === "right") {this.state.currentIndex++;}
-		else if (dir === "left") {this.state.currentIndex--;}
+		if (fullscreen === false) {
+			if (dir === "right") {this.state.currentIndex1++;}
+			else if (dir === "left") {this.state.currentIndex1--;}
 
-		if (this.state.currentIndex >= products[this.id].images.length) { this.state.currentIndex = 0 }
-		if (this.state.currentIndex < 0) { this.state.currentIndex = products[this.id].images.length - 1}
-		this.state.refs.imgRef1.current.src = process.env.PUBLIC_URL + products[this.id].images[this.state.currentIndex]
-		this.state.refs.imgRef1.current.alt = "Product " + this.state.currentIndex
+			if (this.state.currentIndex1 >= products[this.id].images.length) { this.state.currentIndex1 = 0 }
+			if (this.state.currentIndex1 < 0) { this.state.currentIndex1 = products[this.id].images.length - 1}
+			this.state.refs.imgRef1.current.src = process.env.PUBLIC_URL + products[this.id].images[this.state.currentIndex1]
+			this.state.refs.imgRef1.current.alt = "Product " + this.state.currentIndex1
+		}
+		else if (fullscreen === true) {
+			if (dir === "right") {this.state.currentIndex2++;}
+			else if (dir === "left") {this.state.currentIndex2--;}
+
+			if (this.state.currentIndex2 >= products[this.id].images.length) { this.state.currentIndex2 = 0 }
+			if (this.state.currentIndex2 < 0) { this.state.currentIndex2 = products[this.id].images.length - 1}
+			this.state.refs.imgRef2.current.src = process.env.PUBLIC_URL + products[this.id].images[this.state.currentIndex2]
+			this.state.refs.imgRef2.current.alt = "Product " + this.state.currentIndex2
+		}
 	}
-	/*
-	const openFullScreen = () => {
-		fullscreenRef.current.style.opacity = "100%";
-		fullscreenRef.current.style["pointer-events"] = "all";
+	openFullScreen = () => {
+		this.state.refs.fullscreenRef.current.style.opacity = "100%";
+		this.state.refs.fullscreenRef.current.style["pointer-events"] = "all";
+
+		this.state.refs.imgRef2.current.src = process.env.PUBLIC_URL + products[this.id].images[0]
+		this.state.refs.imgRef2.current.alt = "Product 0"
+		this.setState({"currentIndex2": 0})
 	};
-
-	const closeFullscreen = () => {
-		fullscreenRef.current.style.opacity = "0%";
-		fullscreenRef.current.style["pointer-events"] = "none";
-	};
-	*/
-
-	// https://stackoverflow.com/questions/65329431/how-to-properly-use-ref-with-a-react-class-component-and-styled-components
 	
-	getAlbum = () => {
-		
-	}
+	closeFullscreen = () => {
+		this.state.refs.fullscreenRef.current.style.opacity = "0%";
+		this.state.refs.fullscreenRef.current.style["pointer-events"] = "none";
+	};
 
 	render() {
 		
-
-		
-
 		this.state.refs.imgRef1 = React.createRef();
+		this.state.refs.imgRef2 = React.createRef();
 
 		if (products[this.id].images !== true || products[this.id].images !== false) {
 			return (
 				<>
 					<div className="previewFlex">
-						<button onClick={() => {this.changeImage1("left")}} className="imageButtonLeft">{"<"}</button>
-						<img ref={this.state.refs.imgRef1} className="imagePreview" src={process.env.PUBLIC_URL + this.data.images[0]} alt="Product 1" />
-						<button onClick={() => {this.changeImage1("right")}} className="imageButtonRight">{">"}</button>
+						<button onClick={() => {this.changeImage("left", false)}} className="imageButtonLeft">{"<"}</button>
+						<img ref={this.state.refs.imgRef1} onClick={this.openFullScreen} className="imagePreview" src={process.env.PUBLIC_URL + this.data.images[0]} alt="Product 1" />
+						<button onClick={() => {this.changeImage("right", false)}} className="imageButtonRight">{">"}</button>
 					</div>
 					<div className={"albumFlex"}>
-						{this.state.album.map((value, index) => { return this.smallGallery1(index) })}
+						{this.state.album.map((value, index) => { return this.smallGallery(index, false) })}
 					</div>
-					{/*<div ref={fullscreenRef} className="previewFlexFULL">
-						<img onClick={closeFullscreen} className="closeFULL" src={svgClose} alt="close" />
-						<img ref={imgRef2} className="imagePreviewFULL" src={process.env.PUBLIC_URL + data.images[0]} alt="Product 1" />
-						<button onClick={() => {currentPos = changeImage(props.id, currentPos, "left", imgRef2)}} className="imageButtonLeftFULL">{"<"}</button>
-						<button onClick={() => {currentPos = changeImage(props.id, currentPos, "right", imgRef2)}} className="imageButtonRightFULL">{">"}</button>
+					<div ref={this.state.refs.fullscreenRef} className="previewFlexFULL">
+						<img onClick={this.closeFullscreen} className="closeFULL" src={svgClose} alt="close" />
+						<img ref={this.state.refs.imgRef2} className="imagePreviewFULL" src={process.env.PUBLIC_URL + this.data.images[0]} alt="Product 1" />
+						<button onClick={() => {this.changeImage("left", true)}} className="imageButtonLeftFULL">{"<"}</button>
+						<button onClick={() => {this.changeImage("right", true)}} className="imageButtonRightFULL">{">"}</button>
 
 						<div className={"albumFlexFULL"}>
-							{/*{album.map((value, index) => (<img key={index} onClick={changeToImage(props.id, index, imgRef2, changeCurrent)} className={() => {checkSelectClass(index, currentSelect)}} src={process.env.PUBLIC_URL + value} alt={"Product_" + index} />))}}
+							{this.state.album.map((value, index) => { return this.smallGallery(index, true) })}
 						</div>
-				</div>*/}
+				</div>
 				</>
 			)
 		}
