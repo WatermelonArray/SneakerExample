@@ -11,7 +11,7 @@ function home() {
 		<>
 			<div className="home">
 				<img className="logoBig" src={svgLogo} alt="sneakers"></img>
-				<Button type="link" to="/collections" text="View Collections" styleClass={"homepage"} />
+				<Button type="link" to="/SneakerExample/collections" text="View Collections" styleClass={"homepage"} />
 			</div>
 		</>
 	)

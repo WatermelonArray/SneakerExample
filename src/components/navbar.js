@@ -115,17 +115,17 @@ const Navbar = () => {
 				</button>
 	
 				<div className="navbarLogo">
-					<Link to="/">
+					<Link to="/SneakerExample">
 						<img onClick={closeNavbar} src={svgLogo} alt="sneakers"></img>
 					</Link>
 				</div>
 
 				<ul ref={pageLinkRef} className="pageLinksClose">
 					<li className="topbarLinks topbarLinksHome">
-						<Link onClick={closeNavbar} className="topbarLinksStyle" to="/">Home</Link>
+						<Link onClick={closeNavbar} className="topbarLinksStyle" to="/SneakerExample">Home</Link>
 					</li>
 					<li className="topbarLinks">
-						<Link onClick={closeNavbar} className="topbarLinksStyle" to="/collections">Collections</Link>
+						<Link onClick={closeNavbar} className="topbarLinksStyle" to="/SneakerExample/collections">Collections</Link>
 					</li>
 					<li onClick={closeNavbar} className="topbarLinks topbarLinksStyle">Men</li>
 					<li onClick={closeNavbar} className="topbarLinks topbarLinksStyle">Women</li>
@@ -144,13 +144,13 @@ const Navbar = () => {
 							<div ref={cartContainerRef} className="cartContainer" onChange={() => {console.log("Changed")}}>
 								<p ref={cartEmptyRef} className="cartEmpty">Your cart is empty.</p>
 								
-								<CartContents ref={cartContentRefs} callback={checkCart} />
+								<CartContents ref={cartContentRefs} callback={checkCart.bind} />
 							</div>
 							<Button refVar={cartCheckoutREF} type="button" text="Checkout" styleClass="checkout" />
 						</div>
 					</li>
 					<li className="topbarRight">
-						<Link className="topbarText" to="/collections">
+						<Link className="topbarText" to="/SneakerExample/itemView">
 							<img className="imageProfile" src={svgProfile} alt="Account"></img>
 						</Link>
 					</li>

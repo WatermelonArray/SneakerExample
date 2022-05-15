@@ -16,9 +16,9 @@ export default function App() {
 			<BrowserRouter>
 				<Navbar />
 				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="collections" element={<Collections />} />
-					<Route path="itemView" element={<ItemView callback={cartCallback} />} />
+					<Route path="/SneakerExample" element={<Home />} />
+					<Route path="SneakerExample/collections" element={<Collections />} />
+					<Route path="SneakerExample/itemView" element={<ItemView callback={cartCallback} />} />
 				</Routes>
 			</BrowserRouter>
 		</>

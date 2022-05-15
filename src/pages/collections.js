@@ -7,7 +7,7 @@ import "../static/css/collections.css";
 function collections() {
 	return (
 		<div className="collectionsFlex">
-			<Button type="link" to="/itemView" text="View item" styleClass="collections"/>
+			<Button type="link" to="/SneakerExample/itemView" text="View item" styleClass="collections"/>
 		</div>
 	);
 }
