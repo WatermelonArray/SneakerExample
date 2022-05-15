@@ -1,5 +1,6 @@
 .previewFlex {
 	display: flex;
+
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
@@ -12,9 +13,40 @@
 
 	width: auto;
 	height: auto;
-
-	z-index: -1;
 }
+
+.previewFlexFULL {
+	display: flex;
+	position: fixed;
+
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;;
+
+	margin: 0;
+	padding: 0;
+
+	z-index: 10;
+
+	min-width: 100px;
+	min-height: 100px;
+
+	background-color: rgba(0, 0, 0, 0.75);
+
+	width: calc(100vw);
+	height: 100%;
+
+	left: 0;
+	top: 0;
+
+	opacity: 0%;
+
+	pointer-events: none;
+
+	transition: 0.3s;
+
+}
+
 
 .imagePreview {
 
@@ -32,7 +64,38 @@
 	margin: 0;
 	padding: 0;
 
+	cursor: pointer;
+
+	z-index: 2;
+
 	transition: 0.3s;
+
+	background-color: aqua;
+}
+.imagePreviewFULL {
+
+	min-width: 100px;
+	min-height: 100px;
+
+	max-width: 70%;
+	max-height: 70%;
+
+	width: auto;
+	height: auto;
+
+	border-radius: 1rem;
+
+	margin: 0;
+	padding: 0;
+
+	z-index: 2;
+
+	transition: 0.3s;
+
+	margin-top: 4rem;
+}
+.imagePreview:hover {
+	opacity: 75%
 }
 .imageButtonLeft {
 	display: none;
@@ -58,6 +121,37 @@
 	top: calc(80px + 18vh);
 
 	transition: 0.3s;
+
+	pointer-events: none;
+	cursor: pointer;
+}
+.imageButtonLeftFULL {
+	position: absolute;
+
+	background-color:hsl(223, 64%, 98%);
+	border: 0;
+	border-radius: 100%;
+
+	color: black;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	text-align: center;
+
+	margin: 0;
+	padding: 0;
+
+	width: 4rem;
+	height: 4rem;
+	
+	margin-right: 35%;
+	top: calc(38%);
+	
+	transition: 0.3s;
+	
+	cursor: pointer;
+
+	z-index: 10;
 }
 .imageButtonRight {
 	display: none;
@@ -83,6 +177,46 @@
 	top: calc(80px + 18vh);
 
 	transition: 0.3s;
+
+	pointer-events: none;
+	cursor: pointer;
+}
+.imageButtonRightFULL {
+	position: absolute;
+
+	background-color: hsl(223, 64%, 98%);
+	border: 0;
+	border-radius: 100%;
+
+	color: black;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	text-align: center;
+
+	margin: 0;
+	padding: 0;
+
+	cursor: pointer;
+
+	width: 4rem;
+	height: 4rem;
+
+	margin-left: 35%;
+	top: calc(38%);
+
+	transition: 0.3s;
+
+	z-index: 10;
+}
+.closeFULL {
+	width: 24px;
+	position: fixed;
+	z-index: 60;
+	top: 2rem;
+	right: 32%;
+
+	cursor: pointer;
 }
 
 .imageSmall {
@@ -95,6 +229,7 @@
 	margin-top: 1rem;
 	margin-left: 1rem;
 	margin-right: 1rem;
+	cursor: pointer;
 }
 
 .albumFlex {
@@ -109,17 +244,29 @@
 	margin: 0;
 	padding: 0;
 }
+.albumFlexFULL {
 
-.imageNotSelect {
-	opacity: 100%;
+	width: 30%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+
+	margin: 0;
+	padding: 0;
+
+	margin-bottom: 2rem;
 }
-.imageNotSelect:first-child {
-	opacity: 50%;
-	border: 0.2rem;
+
+.imageSelected {
+	opacity: 1;
 	border-color: hsl(26, 100%, 55%);
 	border-style: solid;
 }
-
+.imageSelected:hover {
+	opacity: 50%;
+}
 @media screen and (max-width: 900px) {
 	.imagePreview {
 
@@ -129,10 +276,14 @@
 		max-height: 100%;
 		max-width: 100%;
 
-
-
 		height: auto;
 		width: auto;
+
+		cursor:auto;
+		pointer-events: none;
+	}
+	.imagePreview:hover {
+		opacity: 100%;
 	}
 	.previewFlex {
 		margin: 0;
@@ -141,9 +292,11 @@
 	}
 	.imageButtonLeft {
 		display: block;
+		pointer-events: all;
 	}
 	.imageButtonRight {
 		display: block;
+		pointer-events: all;
 	}
 	.albumFlex {
 		display: none;
@@ -170,8 +323,10 @@
 	}
 	.imageButtonLeft {
 		margin-right: 80%;
+		z-index: 20;
 	}
 	.imageButtonRight {
 		margin-left: 80%;
+		z-index: 20;
 	}
 }

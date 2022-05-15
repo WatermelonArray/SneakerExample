@@ -51,38 +51,38 @@ class CartContents extends React.Component {
 	render() {
 		if (this.state.cart !== null) {
 
-		return (
-			<>
-				{this.state.cart.map((value, index) => (
-					<div key={index} className="itemFlex">
-						<img className="productImage" src={process.env.PUBLIC_URL + products[value.id].images[0]} />
-						<div className="itemDescription">
-							<p className="itemTextThin">{products[value.id].name}</p>
-							<div className="itemPriceFlex">
-								<p className="itemTextThin">${
-									products[value.id].price
-									- (products[value.id].price / 100 * products[value.id].discount)
-									} x {value.amount}
-								</p>
-								<p className="itemTextBold">${
-									(
+			return (
+				<>
+					{this.state.cart.map((value, index) => (
+						<div key={index} className="itemFlex">
+							<img className="productImage" src={process.env.PUBLIC_URL + products[value.id].images[0]} />
+							<div className="itemDescription">
+								<p className="itemTextThin">{products[value.id].name}</p>
+								<div className="itemPriceFlex">
+									<p className="itemTextThin">${
 										products[value.id].price
 										- (products[value.id].price / 100 * products[value.id].discount)
-									)
-									* value.amount
-								}
-								</p>
+										} x {value.amount}
+									</p>
+									<p className="itemTextBold">${
+										(
+											products[value.id].price
+											- (products[value.id].price / 100 * products[value.id].discount)
+										)
+										* value.amount
+									}
+									</p>
+								</div>
+							</div>
+							<div className="itemTrash">
+								<img src={svgTrash} onClick={() => {this.removeItem(index)}} className="cartSVG" alt="Cart"></img>
 							</div>
 						</div>
-						<div className="itemTrash">
-							<img src={svgTrash} onClick={() => {this.removeItem(index)}} className="cartSVG" alt="Cart"></img>
-						</div>
-					</div>
-				))}
-			</>
-		)
-	}
-	else {return(<></>)}
+					))}
+				</>
+			)
+		}
+		else {return(<></>)}
 	};
 };
 

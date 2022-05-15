@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import { Button } from "../components/button";
 import { Selector } from "../components/selector";
-import { ImagePreview, ImageGallery } from "../components/imageGallery";
+import { ImagePreview }from "../components/imageGallery";
 import { ItemBrand, ItemName, ItemDescription, ItemPrice, ItemDiscountPrice} from "../components/itemDescription"
 
 
@@ -44,12 +44,13 @@ const ItemView = (props) => {
 		
 		props.callback();
 	}
-
+/*
+	<Button text="sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" />
+*/
 	return (
 		<div className="itemViewFlex">
 			<div className="gridLayoutLeft">
 				<ImagePreview id={0} />
-				<ImageGallery id={0} />
 			</div>
 			<div className="gridLayoutRight">
 				<ItemBrand id={0} />
